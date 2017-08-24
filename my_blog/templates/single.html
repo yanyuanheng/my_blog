@@ -29,7 +29,7 @@
     <header>
         <div class="widewrapper masthead">
             <div class="container">
-                <a href="index.html" id="logo">
+                <a href="{% url 'main' %}" id="logo">
                     <img src="/static/img/logo.png" alt="clean Blog">
                 </a>
 
@@ -97,15 +97,15 @@
                         </header>
                         <div class="body">
                             {% block content %}
-                            {% for article in blog_article %}
+{#                            {% for article in blog_main %}#}
 
-                            <h1>{{ article.title }}</h1>
+                            <h1>{{ post.title }}</h1>
 
                             <div class="meta">
-                                <i class="fa fa-user"></i>{{ article.author_name }} <i class="fa fa-calendar"></i>{{ article.date_time|date:"Y-m-d H:i:s"}}<i class="fa fa-comments"></i><span class="data"><a href="#comments">3 Comments</a></span>
+                                <i class="fa fa-user"></i>{{ post.author_name }} <i class="fa fa-calendar"></i>{{ post.date_time|date:"Y-m-d H:i:s"}}<i class="fa fa-comments"></i><span class="data"><a href="#comments">3 Comments</a></span>
                             </div>
-                            <p>{{ article.content }}</p>
-                                {% endfor %}
+                            <p>{{ post.content }}</p>
+{#                                {% endfor %}#}
                             {% endblock %}
 
 
